@@ -1,3 +1,199 @@
+:root {
+    --bkg-color: #000;
+    --text-color-nav: #fff;
+    --text-color-hover: rgb(216,31,38);
+    --sch-boder-color: rgba(255, 255, 2555, 0.5);
+}
+
+
 * {
-    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+box-sizing: border-box;  
+/* display: flex;
+align-items: center;
+justify-content: center;*/
+}
+
+body {
+    background: var(--bkg-color);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    z-index: 100;
+    .logo img {
+        max-width: 150px;
+    }
+}
+.navigation {
+    display: flex;
+    li{
+        list-style: none;
+        margin: 0 10px;
+        a {
+            color: var(--text-color-nav);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        &:hover a {
+            color: var(--text-color-hover); 
+        }
+    }
+}
+
+.search {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: var(--text-color-nav);
+        background: transparent;
+        border: 1px solid var(--sch-boder-color);
+        outline: none;
+        border-radius: 4px;
+        padding: 0 10px 0 45px;
+        backdrop-filter: blur(2px);
+        &::placeholder {
+            color: var(--sch-boder-color);
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .sombraImg {
+        position: absolute;
+        background: linear-gradient(45deg, black 30%, transparent);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+}
+
+.movieTitle {
+    max-width: 250px;
+}
+
+.banner .content {
+    h4 {
+        color: var(--sch-boder-color);
+        font-weight: 500;
+        span {
+            padding: 0 10px;
+            border-right: 1px solid var(--sch-boder-color);
+            &first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: none;
+            }
+            i {
+                background: var(--text-color-hover);
+                color: var(--text-color-nav);
+                padding: 0 8px;
+                display: inline-block;
+                border-radius: 2px;
+                font-style: normal;
+            }
+        }
+    }
+    p {
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.5em;
+        color: var(--text-color-nav);
+        margin: 10px 0 20px;
+    }
+    .buttons {
+        position: relative;
+        a {
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+            background: var(--text-color-hover);
+            color: var(--text-color-nav);
+            padding: 6px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            &:nth-child(2) {
+                background: rgba(0,0,0,0.5);
+                border: 1px solid rgba(255,255,2555,0.1);
+            }
+            &:hover:nth-child(2) {
+                background: var(--text-color-hover);
+            }
+
+        }
+    }
+}
+.play {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    cursor: pointer;
+    img {
+        margin-right: 10px;
+        max-width: 50px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+    .search {
+        position: relative;
+        width: calc(100% - 20px);
+        height: 40px;
+
+    }
 }
