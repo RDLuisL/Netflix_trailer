@@ -218,6 +218,38 @@ header {
     }
 }
 
+    .trailer{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(20px);
+        visibility: hidden;
+        opacity: 0;
+        &.active{
+            visibility: visible;
+            opacity: 1;
+        }
+        video{
+            max-width: 900px;
+            outline: none;
+     }
+}
+
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: invert(1);
+    max-width: 32px;
+}
+
 @media (max-width: 991px){
     header {
         padding: 20px 50px;
@@ -238,6 +270,9 @@ header {
     .play img{
         margin-right: 10px;
         max-width: 40px;
+    }
+    .trailer video{
+        max-width: 90%;
     }
 }
 @media (max-width: 600px) {
