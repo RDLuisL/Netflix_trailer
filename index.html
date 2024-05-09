@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netflix Main</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <body>
       <main>
@@ -18,7 +20,8 @@
               <li><a href="#">My List</a></li>
             </ul>
             <div class="search">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search"/>
+                <button class="btnbuscar"><span class="material-icon">search</span></button>
             </div>
             </header>
           <section class="banner">
@@ -38,9 +41,22 @@
                   <a href="#">My List</a>
                 </div>
             </div>
-            <a href="#" class="play" onclick=""><img src="../img/play_white_button_icon_227851.png" alt="">Watch Trailer</a>
+            <a href="#" class="play" onclick="toggleVideo"><img src="../img/play_white_button_icon_227851.
+            png">Watch Trailer</a>
 
           </section>
+          <section class="trailer"></section>
+            <video src="..img/FALLOUT Tráiler Español Latino (2024).mp4" controls="true"></video>
+            <img src="" alt="" class="close" onclick="toggleVideo">
       </main>
+      <script>
+        functionn toggleVideo(){
+          const trailer = document.querySelector(".trailer");
+          const video =document.querySelector("video");
+          trailer.classList.toggle("active");
+          video.currentTime=0;
+          video.pause();
+        }
+      </script>
 </body>
 </html>

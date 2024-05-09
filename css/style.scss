@@ -16,6 +16,31 @@ align-items: center;
 justify-content: center;*/
 }
 
+.material-icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-family: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    // Support for all Webkit browser
+    -webkit-font-smoothing: antialiased;
+    // Support for Safari and Chrome.
+    text-rendering: optimizelegibility;
+    // Support for Firefox
+    -moz-osx-font-smoothing: grayscale;
+
+    // Support for IE.
+    font-feature-settings: 'liga';
+}
+
+
 body {
     background: var(--bkg-color);
 }
@@ -71,6 +96,14 @@ header {
         &::placeholder {
             color: var(--sch-boder-color);
         }
+    }
+    .btnbuscar{
+        color: #fff;
+        border: none;
+        position: relative;
+        top: 25%;
+        background: transparent;
+        left: 2%;
     }
 }
 
@@ -185,7 +218,28 @@ header {
     }
 }
 
-
+@media (max-width: 991px){
+    header {
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+    .navigation{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;   
+     }
+    .banner{
+        padding: 100px 50px;
+        .play{
+            left: 50px;
+            font-size: 1em;
+        }
+    }
+    .play img{
+        margin-right: 10px;
+        max-width: 40px;
+    }
+}
 @media (max-width: 600px) {
     header {
         padding: 20px;
@@ -194,6 +248,13 @@ header {
         position: relative;
         width: calc(100% - 20px);
         height: 40px;
-
+    }
+    .banner {
+        padding: 220px 20px 120px;
+        .play{
+            left: 20px;
+            font-size: 1em;
+            bottom: 30px;
+        }
     }
 }
